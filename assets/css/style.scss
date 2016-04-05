@@ -1,0 +1,160 @@
+$regalPurple: #9C70FF;
+$regalRed: #00689E;
+$regalBlue: #00689E;
+$regalGreen: #67983E;
+$regalOrange: #D39916;
+
+// Compass CSS3 Reset
+@import "vendor/compass/reset";
+@import "vendor/andy/andy";
+@import "vendor/typebase";
+
+html {
+		
+	* {
+		-webkit-text-size-adjust: none;
+		   -webkit-touch-callout: none;
+		     -webkit-user-select: none;
+		      -khtml-user-select: none;
+		        -moz-user-select: none;
+			     -ms-user-select: none;
+			  	     user-select: none;
+	}
+	
+	div#background {
+		
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: black url('../img/background.png') no-repeat;
+		background-size: cover;
+		z-index: -1;
+		
+	}
+	
+	body {
+		
+		background-color: black;	
+			
+		main {
+			
+			position: fixed;
+			height: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+			
+		}
+		
+		&.android {
+			
+			main {
+				position: absolute !important;
+			}
+			
+			div#background {
+				position: absolute !important;
+			}
+			
+		}
+		
+		header {
+			
+			margin: 15px;
+			
+			* {
+				line-height: 120%;
+				margin: 0 !important;
+				padding: 0 !important;
+			}
+			
+		}
+		
+		img.rcc-card {
+			&.purple-bg {
+				background: $regalPurple;
+			}
+			margin: 0;
+			padding: 0;
+			&:after {
+				padding: 0;
+				margin: 0;
+			}
+			border-bottom: 1px solid rgba(244,244,244,0.20);
+		}
+		
+		.note {
+	
+			font-size: 12px;
+			line-height: 150%;
+			margin: 15px;
+			color: rgba(255,255,255,0.5);
+			letter-spacing: 0.5px;
+				
+		}
+		
+		ol {
+			
+			margin: 15px;
+			margin-left: 35px;
+			
+			ol {
+				margin-left: 0px;
+				li {
+					margin-bottom: 10px;
+				}
+			}
+			
+		}
+		
+		section.text {
+			
+			margin: 15px;
+			
+			
+			ul, ol {
+				list-style: circle;
+				margin: 0;
+				margin-left: 25px;
+			}
+			
+			p {
+				margin: 15px 0;
+			}
+			
+		}
+		
+		a:link, a:active, a:visited {
+			color: $regalGreen;
+			text-decoration: none;
+			//font-weight: 500;
+		}
+		
+		&.android {
+			//@import "platform/android"
+			font-family: 'Roboto Condensed' sans-serif;
+			font-weight: light;
+			color: white;
+			
+			@import "platform/android";
+			
+		}
+		
+		&.ios {
+						
+			font-family: 'Roboto', 'Avenir Next', sans-serif;
+			font-weight: light;
+			color: white;
+			
+			@import "platform/ios";
+					
+		}
+		
+	} // body
+	
+} // html
